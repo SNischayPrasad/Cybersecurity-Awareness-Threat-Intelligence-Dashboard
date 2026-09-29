@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security Awareness Quiz</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/common.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+</head>
+<body>
+<main class="container">
+  <div class="page-head">
+    <div>
+      <div class="eyebrow">Test your awareness</div>
+      <h1>Security Awareness Quiz</h1>
+      <p>40 questions across 10 categories. You get an overall awareness score, category scores, your weakest areas and
+        recommended learning modules. Results are stored anonymously.</p>
+    </div>
+    <span class="badge label" id="progress">0 / 0 answered</span>
+  </div>
+  <div class="callout warn" style="margin-bottom:16px" id="disclaimer">This is an educational score, not an employee fitness or competency judgement.</div>
+
+  <section id="result" class="hidden"></section>
+
+  <form id="quiz" class="stack" autocomplete="off"><p class="muted">Loading questions…</p></form>
+  <div class="row section"><button class="btn" id="submit" type="button">Submit answers</button><span id="submit-msg" class="small"></span></div>
+</main>
+</body>
+</html>

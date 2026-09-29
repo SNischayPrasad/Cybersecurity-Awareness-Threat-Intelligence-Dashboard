@@ -1,0 +1,6 @@
+# Cybersecurity Awareness & Threat Intelligence Dashboard
+# Install with:  pip install -r requirements.txt
+Flask>=3.0,<4.0          # REST API + serves the frontend
+pandas>=2.1              # CSV ingestion and trend analytics
+python-dotenv>=1.0       # loads API keys from a local .env file
+pytest>=8.0              # automated tests

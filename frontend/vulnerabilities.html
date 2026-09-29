@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vulnerability Awareness</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="js/common.js" defer></script>
+  <script src="js/vulnerabilities.js" defer></script>
+</head>
+<body>
+<main class="container">
+  <div class="page-head">
+    <div>
+      <div class="eyebrow">CVE &amp; vulnerability awareness</div>
+      <h1>Contextual vulnerability prioritisation</h1>
+      <p>A <strong>vulnerability</strong> is a weakness in software. A <strong>CVE</strong> ID is its public name. <strong>CVSS</strong>
+        rates its technical severity (0–10) — but CVSS does not know <em>your</em> environment. Priority here combines
+        CVSS + asset criticality + exposure + exploitation evidence + business context.</p>
+    </div>
+    <span class="badge label">CVE-2099-* = synthetic demo IDs</span>
+  </div>
+
+  <section class="grid grid-2">
+    <div class="card">
+      <h2>Why CVSS alone is not enough</h2>
+      <div class="grid grid-2" id="compare"></div>
+    </div>
+    <div class="card">
+      <h2>Priority calculator</h2>
+      <form id="calc" class="filters" autocomplete="off">
+        <label class="field">CVSS score<input type="number" name="cvss_score" min="0" max="10" step="0.1" value="9.8" required></label>
+        <label class="field">Asset criticality<select name="asset_criticality"><option>LOW</option><option selected>MEDIUM</option><option>HIGH</option><option>CRITICAL</option></select></label>
+        <label class="field">Exposure<select name="exposure"><option>ISOLATED</option><option selected>INTERNAL</option><option>INTERNET_FACING</option></select></label>
+        <label class="field">Exploitation evidence<select name="exploitation_status"><option value="NO_KNOWN_EXPLOITATION">None known</option><option value="PUBLIC_POC_DEMO">Public PoC (demo)</option><option value="EXPLOITATION_REPORTED_DEMO">Exploited in wild (demo)</option></select></label>
+        <label class="field">Sensitive data?<select name="handles_sensitive_data"><option value="false">No</option><option value="true">Yes</option></select></label>
+        <label class="field">Patch available?<select name="patch_available"><option value="true">Yes</option><option value="false">No</option></select></label>
+        <div class="row"><button class="btn" type="submit">Calculate</button></div>
+      </form>
+      <div id="calc-result"></div>
+    </div>
+  </section>
+
+  <section class="section grid grid-3">
+    <div class="card"><div class="card-title"><h3>By CVSS severity</h3></div><div class="chart-box"><canvas id="c-vsev"></canvas></div></div>
+    <div class="card"><div class="card-title"><h3>By contextual priority</h3><span class="card-sub">P1 = most urgent</span></div><div class="chart-box"><canvas id="c-band"></canvas></div></div>
+    <div class="card"><div class="card-title"><h3>Avg priority by product</h3></div><div class="chart-box"><canvas id="c-prod"></canvas></div></div>
+  </section>
+
+  <section class="section card">
+    <div class="card-title"><h2>Vulnerability register</h2><span class="card-sub" id="vcount"></span></div>
+    <div class="row" style="margin-bottom:10px">
+      <label class="field">Sort<select id="vsort"><option value="priority">Priority</option><option value="cvss">CVSS</option><option value="published">Published</option></select></label>
+      <label class="field">Band<select id="vband"><option value="">All</option><option>P1</option><option>P2</option><option>P3</option><option>P4</option></select></label>
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>CVE</th><th>Product</th><th>Severity</th><th class="num">CVSS</th><th>Asset</th><th>Exposure</th><th>Exploitation (demo)</th><th>Patch</th><th class="num">Priority</th><th>Band</th></tr></thead>
+      <tbody id="vrows"></tbody>
+    </table></div>
+    <p class="small muted" style="margin-top:10px">Exploit and zero-day are discussed only conceptually: an <em>exploit</em> is code/technique that abuses a vulnerability; a <em>zero-day</em> is a vulnerability exploited before a fix exists. This project contains no exploit code.</p>
+  </section>
+</main>
+</body>
+</html>

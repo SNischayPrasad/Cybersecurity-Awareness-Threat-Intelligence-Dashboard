@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOC Alert Queue</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/common.js" defer></script>
+  <script src="js/alerts.js" defer></script>
+</head>
+<body>
+<main class="container">
+  <div class="page-head">
+    <div>
+      <div class="eyebrow">SOC workflow</div>
+      <h1>Alert queue &amp; triage</h1>
+      <p>Alerts are generated from risk/confidence thresholds, repeated observations, correlated clusters and high-priority
+        vulnerabilities — then <strong>correlated</strong> so duplicates become one alert with an observation count.</p>
+    </div>
+  </div>
+
+  <section class="grid grid-4" id="alert-kpis"></section>
+
+  <section class="section card">
+    <h2>Tier 1 SOC investigation workflow</h2>
+    <div class="flow">
+      <span class="step">Threat feed</span><span class="arrow">→</span><span class="step">IOC detected</span><span class="arrow">→</span>
+      <span class="step">Validation</span><span class="arrow">→</span><span class="step">Enrichment</span><span class="arrow">→</span>
+      <span class="step">Risk + confidence</span><span class="arrow">→</span><span class="step hl">Alert</span><span class="arrow">→</span>
+      <span class="step">SOC queue</span><span class="arrow">→</span><span class="step hl">Analyst triage</span><span class="arrow">→</span>
+      <span class="step">Correlation</span><span class="arrow">→</span><span class="step">Investigation</span><span class="arrow">→</span>
+      <span class="step">Escalate / Monitor / Resolve / False positive</span><span class="arrow">→</span><span class="step">Documentation</span>
+    </div>
+    <p class="small" style="margin-top:10px">Tier 1 analysts work the queue: confirm the alert is valid, enrich it, check related records,
+      decide (escalate to Tier 2, monitor, resolve, or mark false positive) and document the reasoning in analyst notes.</p>
+  </section>
+
+  <section class="section card">
+    <div class="card-title"><h2>Alert queue</h2><span class="card-sub" id="acount"></span></div>
+    <div class="filters">
+      <label class="field">Status<select id="f-status"><option value="NEW,INVESTIGATING">Open (New + Investigating)</option><option value="">All</option>
+        <option>NEW</option><option>INVESTIGATING</option><option>MONITORING</option><option>RESOLVED</option><option>FALSE_POSITIVE</option></select></label>
+      <label class="field">Severity<select id="f-sev"><option value="">All</option><option>CRITICAL</option><option>HIGH</option><option>MEDIUM</option></select></label>
+      <label class="field">Type<select id="f-type"><option value="">All</option></select></label>
+    </div>
+    <p class="small muted" id="role-hint"></p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Alert</th><th>Type</th><th>Severity</th><th class="num">Risk</th><th class="num">Conf.</th><th class="num">Obs.</th><th>Description</th><th>Threat</th><th>Status</th></tr></thead>
+      <tbody id="arows"></tbody>
+    </table></div>
+  </section>
+</main>
+</body>
+</html>

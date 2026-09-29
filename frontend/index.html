@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Threat Intel & Awareness Console</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/common.js" defer></script>
+  <script src="js/overview.js" defer></script>
+</head>
+<body>
+<main class="container">
+  <div class="page-head">
+    <div>
+      <div class="eyebrow">Cybersecurity Awareness &amp; Threat Intelligence Dashboard</div>
+      <h1>Human defense + technical threat intelligence, in one console</h1>
+      <p>This platform collects, validates, scores, correlates and explains <strong>synthetic</strong> threat
+        intelligence for SOC analysts, and teaches everyone else how to recognise the same threats.
+        It never visits, scans or contacts any indicator.</p>
+    </div>
+  </div>
+
+  <section class="card">
+    <div class="card-title"><h2>Quick IOC lookup</h2><span class="card-sub">Database lookup only — nothing is contacted</span></div>
+    <form id="quick-search" class="searchbar" autocomplete="off">
+      <input id="quick-q" type="search" placeholder="Try 198.51.100.25, login-check.invalid or CVE-2099-0002" aria-label="Indicator">
+      <button class="btn" type="submit">Search</button>
+    </form>
+  </section>
+
+  <section class="section">
+    <h2>Evidence ladder — not everything suspicious is an attack</h2>
+    <div class="ladder" id="ladder">
+      <div class="ladder-step"><div class="t">OBSERVATION</div><div class="n" id="l-obs">—</div><p>A raw sighting: something was seen in a log or feed.</p></div>
+      <div class="ladder-step"><div class="t">INDICATOR</div><div class="n" id="l-ind">—</div><p>A validated artifact (IP, domain, URL, hash) with context.</p></div>
+      <div class="ladder-step"><div class="t">ALERT</div><div class="n" id="l-alert">—</div><p>A rule fired: this deserves an analyst's attention.</p></div>
+      <div class="ladder-step"><div class="t">THREAT</div><div class="n" id="l-threat">—</div><p>Triage judged it credible and relevant to us.</p></div>
+      <div class="ladder-step"><div class="t">INCIDENT</div><div class="n" id="l-inc">—</div><p>Confirmed impact, declared by an analyst. None in demo data.</p></div>
+    </div>
+  </section>
+
+  <section class="section grid grid-2">
+    <div class="card">
+      <h2>Intelligence pipeline</h2>
+      <p class="small">Every record flows through the same defensive pipeline:</p>
+      <div class="flow">
+        <span class="step">Synthetic feed</span><span class="arrow">→</span>
+        <span class="step">Collection</span><span class="arrow">→</span>
+        <span class="step">Normalisation</span><span class="arrow">→</span>
+        <span class="step">Validation</span><span class="arrow">→</span>
+        <span class="step">IOC extraction</span><span class="arrow">→</span>
+        <span class="step">Classification</span><span class="arrow">→</span>
+        <span class="step hl">Risk + confidence</span><span class="arrow">→</span>
+        <span class="step">ATT&amp;CK mapping (if justified)</span><span class="arrow">→</span>
+        <span class="step">Threat DB</span><span class="arrow">→</span>
+        <span class="step hl">Correlation</span><span class="arrow">→</span>
+        <span class="step">SOC dashboard</span><span class="arrow">→</span>
+        <span class="step">Awareness</span><span class="arrow">→</span>
+        <span class="step">Analyst / User</span>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Risk is not confidence</h2>
+      <dl class="kv">
+        <dt>Risk score</dt><dd>How concerning the indicator could be (severity, recency, frequency, context).</dd>
+        <dt>Confidence score</dt><dd>How much we trust the intelligence (source reliability, corroboration, validation).</dd>
+        <dt>Risk 90 · Conf 25</dt><dd>Potentially serious, but evidence is weak — validate first.</dd>
+        <dt>Risk 70 · Conf 95</dt><dd>High-confidence intelligence with meaningful risk — triage.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Explore</h2>
+    <div class="grid grid-4" id="tiles"></div>
+  </section>
+</main>
+</body>
+</html>

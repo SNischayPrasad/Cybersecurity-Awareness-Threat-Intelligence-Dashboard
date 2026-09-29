@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Executive Cyber Summary</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="js/common.js" defer></script>
+  <script src="js/executive.js" defer></script>
+</head>
+<body>
+<main class="container">
+  <div class="page-head">
+    <div>
+      <div class="eyebrow">Management view</div>
+      <h1>Executive Cybersecurity Summary</h1>
+      <p id="headline">Loading…</p>
+    </div>
+  </div>
+
+  <section class="grid grid-4" id="exec-kpis"></section>
+
+  <section class="section grid grid-2">
+    <div class="card">
+      <h2>Recommended defensive priorities</h2>
+      <ol id="priorities"></ol>
+    </div>
+    <div class="card">
+      <div class="card-title"><h2>Awareness score trend</h2><span class="card-sub">average quiz score per month (includes synthetic history)</span></div>
+      <div class="chart-box"><canvas id="c-aware"></canvas></div>
+      <p class="small" id="aware-note" style="margin-top:8px"></p>
+    </div>
+  </section>
+
+  <section class="section grid grid-3">
+    <div class="card"><h2>Top threat categories</h2><p class="small muted">active records</p><div id="top-cats"></div></div>
+    <div class="card"><h2>Top vulnerability areas</h2><p class="small muted">by number of P1 (urgent) items</p><div id="top-vulns"></div></div>
+    <div class="card"><h2>Top awareness weaknesses</h2><p class="small muted">lowest average category scores</p><div id="weak"></div></div>
+  </section>
+
+  <section class="section card">
+    <h2>How to read this page</h2>
+    <ul id="notes"></ul>
+  </section>
+</main>
+</body>
+</html>

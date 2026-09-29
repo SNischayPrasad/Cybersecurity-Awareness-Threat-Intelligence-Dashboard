@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cybersecurity Awareness Center</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/common.js" defer></script>
+  <script src="js/awareness.js" defer></script>
+</head>
+<body>
+<main class="container">
+  <div class="page-head">
+    <div>
+      <div class="eyebrow">Human defense</div>
+      <h1>Cybersecurity Awareness Center</h1>
+      <p>Fifteen short modules. Each covers what the threat is, why it matters, warning signs, safe practices and what to do
+        if something happens. Click a module to open it, then test yourself in the <a href="quiz.html">quiz</a>.</p>
+    </div>
+  </div>
+
+  <section class="grid grid-3" id="modules"><p class="muted">Loading modules…</p></section>
+
+  <section class="section card" id="incident-response">
+    <h2>Incident response awareness</h2>
+    <p>A high-level lifecycle (based on common frameworks such as NIST SP 800-61; other frameworks use different terms, e.g. SANS PICERL):</p>
+    <div class="flow" style="margin:10px 0 16px">
+      <span class="step">Preparation</span><span class="arrow">→</span><span class="step">Detection / Identification</span><span class="arrow">→</span>
+      <span class="step">Containment</span><span class="arrow">→</span><span class="step">Eradication</span><span class="arrow">→</span>
+      <span class="step">Recovery</span><span class="arrow">→</span><span class="step">Lessons learned</span>
+    </div>
+    <div class="grid grid-2">
+      <div>
+        <h3>Everyone's checklist</h3>
+        <ul>
+          <li>Know how to report: report button, helpdesk number, security email.</li>
+          <li>Report quickly — minutes matter more than certainty.</li>
+          <li>Write down what happened, when, and on which device/account.</li>
+          <li>Disconnect a suspected infected device from the network (unplug / Wi-Fi off). Do not wipe or power it off unless told to.</li>
+          <li>Do not delete suspicious emails or files — they are evidence.</li>
+          <li>Do not contact, "hack back" or investigate the attacker yourself.</li>
+          <li>Follow the response team's instructions and keep details confidential.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Organisation's checklist (educational)</h3>
+        <ul>
+          <li><strong>Preparation:</strong> contacts list, playbooks, tested backups, logging, tabletop exercises.</li>
+          <li><strong>Detection:</strong> triage alerts, confirm scope, open an incident ticket, preserve evidence.</li>
+          <li><strong>Containment:</strong> isolate affected hosts/accounts with approval; reset exposed credentials.</li>
+          <li><strong>Eradication:</strong> remove the root cause (patch, remove persistence) under change control.</li>
+          <li><strong>Recovery:</strong> restore from known-good backups, monitor closely for recurrence.</li>
+          <li><strong>Lessons learned:</strong> blameless review, update controls, training and detection rules.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,438 @@
+[
+  {
+    "module_id": "phishing",
+    "title": "Phishing Awareness",
+    "category": "Phishing",
+    "summary": "Recognise deceptive messages before they cost you credentials, money or data.",
+    "what_is_it": "Phishing is a message (email, SMS, chat, social media, QR code or call) that pretends to come from someone you trust so that you click a link, open a file, share credentials or send money.",
+    "why_it_matters": "Phishing is one of the most common first steps in real-world breaches. One stolen password or one approved payment can be enough for an attacker to get in.",
+    "warning_signs": [
+      "Suspicious sender: the display name says 'IT Helpdesk' but the address is from an unrelated or look-alike domain (for example helpdesk@examp1e.invalid with the digit 1 instead of the letter l).",
+      "Urgency or threats: 'Your account will be deleted in 2 hours'.",
+      "Credential request: any message asking you to 'confirm' your password or MFA code.",
+      "Unexpected attachment: an invoice, voicemail or 'scanned document' you were not expecting, especially .zip, .html, .iso or macro-enabled files.",
+      "Suspicious link: the visible text says one site but hovering shows a different address.",
+      "Payment request: new bank details, gift cards or 'urgent' wire transfers.",
+      "Impersonation: a message that appears to come from a manager, supplier or well-known brand but with an unusual tone or request.",
+      "Unexpected QR code: a QR code in an email or on a poster asking you to 'log in' or 'pay'."
+    ],
+    "safe_practices": [
+      "Hover over links (or long-press on mobile) to preview the real destination before clicking.",
+      "Go to important sites by typing the address or using a saved bookmark, not by clicking links in messages.",
+      "Verify unusual requests through a trusted channel you already know (the official phone number, not the one in the message).",
+      "Use the 'Report phishing' button so the security team can protect everyone.",
+      "Use a password manager - it will not auto-fill your password on a fake site."
+    ],
+    "what_to_do": [
+      "Do not click, reply or forward the message to colleagues.",
+      "Report it using the official reporting button or to the security team.",
+      "If you already clicked or entered a password: change the password from a trusted device, and tell the security team immediately. Speed matters more than embarrassment."
+    ],
+    "extra_sections": [
+      {
+        "title": "Safe practice example (annotated, fictional)",
+        "items": [
+          "Subject: 'URGENT: mailbox full - verify within 1 hour' -> red flag: urgency.",
+          "From: 'Mail Admin' <admin@mailbox-verify.invalid> -> red flag: sender domain does not match your organisation.",
+          "Body asks you to 'confirm your password' -> red flag: legitimate IT teams never ask for your password.",
+          "Correct response: do not click, report the message, and if worried contact IT using the number on the intranet."
+        ]
+      }
+    ]
+  },
+  {
+    "module_id": "password-security",
+    "title": "Password Security",
+    "category": "Passwords",
+    "summary": "Long, unique passwords stored in a password manager stop most account attacks.",
+    "what_is_it": "Password security means creating passwords that are hard to guess and never reusing them, so one leak cannot unlock your other accounts.",
+    "why_it_matters": "Attackers automatically try leaked username/password pairs on many sites ('credential stuffing'). Reused passwords turn one breach into many.",
+    "warning_signs": [
+      "You use the same password (or small variations) on several sites.",
+      "Your password is short, a dictionary word, or includes personal details like birthdays.",
+      "You receive a 'password changed' notification you did not expect.",
+      "A service tells you your password appeared in a known breach."
+    ],
+    "safe_practices": [
+      "Use a unique password for every account.",
+      "Prefer long passphrases (four or more random words) - length beats complexity.",
+      "Use a reputable password manager to generate and store passwords.",
+      "Turn on MFA for every account that supports it, starting with email and banking.",
+      "Never share passwords, even with IT staff - they will never need it."
+    ],
+    "what_to_do": [
+      "If a password may be exposed, change it immediately from a trusted device.",
+      "Change it everywhere you reused it.",
+      "Check active sessions/devices on the account and sign out unknown ones.",
+      "Report work-account concerns to the security team."
+    ],
+    "extra_sections": [
+      {
+        "title": "Why a password manager helps",
+        "items": [
+          "It remembers hundreds of unique passwords so you only remember one strong master passphrase.",
+          "It fills passwords only on the real website address, which helps you notice fake login pages.",
+          "It can warn you about weak, reused or breached passwords."
+        ]
+      }
+    ]
+  },
+  {
+    "module_id": "mfa",
+    "title": "Multi-Factor Authentication (MFA)",
+    "category": "MFA",
+    "summary": "A second factor blocks most attacks that rely on a stolen password.",
+    "what_is_it": "MFA requires something you know (password) plus something you have (phone, security key) or something you are (fingerprint). A stolen password alone is no longer enough.",
+    "why_it_matters": "Strong password + MFA is generally much safer than a password alone, because the attacker also needs your device or key.",
+    "warning_signs": [
+      "You receive an MFA prompt when you are not logging in.",
+      "You receive many prompts in a row ('MFA fatigue' - hoping you approve one to make them stop).",
+      "Someone calls or messages asking you to read out an MFA code.",
+      "A login page asks for your MFA code on a site you reached through an email link."
+    ],
+    "safe_practices": [
+      "Only approve prompts you started yourself, and check the location/app shown.",
+      "Use number-matching or code-display prompts where available.",
+      "Prefer phishing-resistant methods: passkeys (FIDO2/WebAuthn) or hardware security keys.",
+      "Register backup methods and store recovery codes securely.",
+      "Never share one-time codes with anyone."
+    ],
+    "what_to_do": [
+      "Deny any unexpected prompt.",
+      "Change your password - unexpected prompts often mean it is already known.",
+      "Report the prompts to the security team so they can check sign-in logs."
+    ],
+    "extra_sections": [
+      {
+        "title": "Phishing-resistant authentication and passkeys",
+        "items": [
+          "Passkeys use public-key cryptography (WebAuthn/FIDO2). The private key never leaves your device.",
+          "A passkey is bound to the real website's domain, so it will not work on a look-alike phishing site.",
+          "There is no code to type, so there is nothing for a phisher to steal and replay.",
+          "SMS codes are better than no MFA, but are weaker than app-based or passkey methods."
+        ]
+      }
+    ]
+  },
+  {
+    "module_id": "social-engineering",
+    "title": "Social Engineering",
+    "category": "Social Engineering",
+    "summary": "Attackers manipulate trust, fear and helpfulness - verification defeats them.",
+    "what_is_it": "Social engineering is manipulating people into breaking security procedures - by phone (vishing), SMS (smishing), chat, email or in person (tailgating).",
+    "why_it_matters": "It bypasses technical controls entirely by targeting human instincts such as helpfulness, fear of authority and urgency.",
+    "warning_signs": [
+      "A caller claims to be from IT, the bank or a senior manager and asks you to skip normal process.",
+      "Requests for gift cards, secrecy ('don't tell anyone') or unusual payments.",
+      "Pressure to act before you can check with anyone.",
+      "Someone without a badge asks you to hold the door to a secure area.",
+      "Messages that feel oddly personal, using details from social media."
+    ],
+    "safe_practices": [
+      "Verify identity using a known number or directory - not the contact details provided by the requester.",
+      "Follow dual-approval rules for payments and bank-detail changes.",
+      "It is always OK to say 'I will call you back'.",
+      "Limit what you share publicly about your role and organisation.",
+      "Challenge politely or report unknown people in secure areas."
+    ],
+    "what_to_do": [
+      "Stop the interaction and do not provide information.",
+      "Report the attempt with as many details as you remember (time, number, what was asked).",
+      "If you already shared information, tell the security team immediately."
+    ],
+    "extra_sections": []
+  },
+  {
+    "module_id": "safe-browsing",
+    "title": "Safe Browsing",
+    "category": "Safe Browsing",
+    "summary": "Browse deliberately: check addresses, keep browsers updated, avoid unofficial downloads.",
+    "what_is_it": "Safe browsing is a set of habits that reduce the chance of landing on fake, compromised or malicious websites.",
+    "why_it_matters": "Look-alike sites, malicious ads and compromised sites can steal credentials or deliver malware.",
+    "warning_signs": [
+      "Misspelled or look-alike web addresses.",
+      "Pop-ups claiming your device is infected and urging you to call a number.",
+      "Sites demanding you install a 'codec', 'update' or extension to continue.",
+      "Browser certificate warnings on sites that normally work fine.",
+      "Download buttons that are actually adverts."
+    ],
+    "safe_practices": [
+      "Keep your browser and extensions updated; remove extensions you do not use.",
+      "Download software only from official vendor sites or approved app stores.",
+      "Use bookmarks for important sites.",
+      "Remember: the padlock (HTTPS) means the connection is encrypted, not that the site is trustworthy.",
+      "Do not ignore certificate warnings."
+    ],
+    "what_to_do": [
+      "Close the tab (use Task Manager if a pop-up will not close). Do not call numbers shown on scare pop-ups.",
+      "If you downloaded or ran something suspicious, disconnect from the network and report it.",
+      "Change passwords you entered on a suspicious site."
+    ],
+    "extra_sections": []
+  },
+  {
+    "module_id": "secure-wifi",
+    "title": "Secure Wi-Fi",
+    "category": "Wi-Fi",
+    "summary": "Treat public Wi-Fi as untrusted and protect your home network.",
+    "what_is_it": "Wi-Fi security covers how you connect to wireless networks at home, at work and in public places.",
+    "why_it_matters": "Open or fake hotspots can let others observe or redirect your traffic. Weak home routers can be taken over.",
+    "warning_signs": [
+      "Open networks with generic names like 'Free_Airport_WiFi'.",
+      "Two networks with almost the same name (a possible 'evil twin').",
+      "Captive portals asking for unnecessary personal details or passwords.",
+      "Unexpected certificate warnings after connecting."
+    ],
+    "safe_practices": [
+      "Use your organisation's VPN on public networks.",
+      "Prefer your phone's hotspot over unknown public Wi-Fi.",
+      "At home: use WPA3 (or WPA2-AES), a strong Wi-Fi password, and change the router's default admin password.",
+      "Keep router firmware updated.",
+      "Turn off auto-join for open networks."
+    ],
+    "what_to_do": [
+      "Disconnect if something looks wrong.",
+      "Change passwords used while connected to a suspicious network.",
+      "Report suspicious office Wi-Fi networks to IT."
+    ],
+    "extra_sections": []
+  },
+  {
+    "module_id": "software-updates",
+    "title": "Software Updates & Patching",
+    "category": "Software Updates",
+    "summary": "Updates close the doors attackers already know about.",
+    "what_is_it": "Updates (patches) fix security weaknesses (vulnerabilities) in operating systems, browsers, apps and devices.",
+    "why_it_matters": "Many successful attacks use vulnerabilities for which a patch already exists. Delaying updates leaves known doors open.",
+    "warning_signs": [
+      "Devices that have not restarted to install updates for weeks.",
+      "Software that is 'end of life' and no longer receives security fixes.",
+      "Update prompts that appear inside a web page rather than from the app or OS itself (a common trick)."
+    ],
+    "safe_practices": [
+      "Turn on automatic updates.",
+      "Restart when prompted so updates actually install.",
+      "Only update through the official app/OS mechanism.",
+      "Replace unsupported software and devices."
+    ],
+    "what_to_do": [
+      "If an update fails repeatedly, contact IT.",
+      "If you suspect a fake update prompt, close it and report it."
+    ],
+    "extra_sections": []
+  },
+  {
+    "module_id": "ransomware",
+    "title": "Ransomware Awareness",
+    "category": "Ransomware",
+    "summary": "Ransomware locks or steals data for extortion; backups, patching and fast reporting limit the damage.",
+    "what_is_it": "Ransomware is malicious software that encrypts files and/or steals data, then demands payment. Many groups also threaten to publish stolen data ('double extortion').",
+    "why_it_matters": "It can stop an entire organisation - hospitals, schools, factories - for days or weeks.",
+    "warning_signs": [
+      "Files suddenly renamed with an unfamiliar extension or that will not open.",
+      "A ransom note on screen or in folders.",
+      "Very slow systems and unusual disk activity.",
+      "Security tools reporting blocked or quarantined files."
+    ],
+    "safe_practices": [
+      "Report suspicious emails and attachments - they are a common entry point.",
+      "Keep devices patched and do not disable security tools.",
+      "Save work to approved, backed-up locations.",
+      "Use MFA - stolen remote-access passwords are another common entry point."
+    ],
+    "what_to_do": [
+      "Disconnect the device from the network (unplug the cable / turn off Wi-Fi) but do not power it off unless told to - evidence in memory can help responders.",
+      "Report immediately to the security team or helpdesk.",
+      "Do not try to pay, negotiate or 'decrypt' anything yourself.",
+      "Follow the incident response team's instructions."
+    ],
+    "extra_sections": [
+      {
+        "title": "Common impact",
+        "items": ["File encryption", "Service disruption", "Data theft and extortion risk", "Operational downtime"]
+      },
+      {
+        "title": "Organisational defences",
+        "items": ["Offline / immutable, tested backups", "Patching", "Least privilege", "Email security",
+                  "Endpoint protection (EDR)", "Network segmentation", "MFA", "Monitoring",
+                  "Incident response preparation and exercises"]
+      }
+    ]
+  },
+  {
+    "module_id": "removable-media",
+    "title": "USB & Removable Media Safety",
+    "category": "Removable Media",
+    "summary": "Unknown USB devices can carry malware - never plug in what you found.",
+    "what_is_it": "Removable media includes USB drives, external disks, SD cards and even USB cables/chargers that can contain hidden electronics.",
+    "why_it_matters": "Malware can spread via USB, and lost unencrypted drives can leak sensitive data.",
+    "warning_signs": [
+      "A USB drive 'found' in the car park or left at reception.",
+      "Unexpected USB gifts at events.",
+      "A device that opens a keyboard window or command prompt when connected."
+    ],
+    "safe_practices": [
+      "Never plug in unknown devices - hand them to IT/security.",
+      "Use encrypted, organisation-approved drives for work data.",
+      "Prefer approved cloud sharing over USB where possible.",
+      "Use your own charger or a power-only adapter in public charging stations."
+    ],
+    "what_to_do": [
+      "If you plugged in an unknown device, unplug it and report it immediately.",
+      "Report lost drives that contained work data."
+    ],
+    "extra_sections": []
+  },
+  {
+    "module_id": "data-privacy",
+    "title": "Data Privacy",
+    "category": "Privacy",
+    "summary": "Collect less, share carefully, and protect personal data you handle.",
+    "what_is_it": "Data privacy is about handling personal information (names, IDs, health, financial data) lawfully, fairly and securely.",
+    "why_it_matters": "Leaked personal data harms real people and can lead to regulatory penalties and loss of trust.",
+    "warning_signs": [
+      "Requests for more personal data than a task needs.",
+      "Spreadsheets of personal data sent to personal email or unapproved apps.",
+      "Sharing links set to 'anyone with the link'.",
+      "Personal data pasted into unapproved AI tools or public sites."
+    ],
+    "safe_practices": [
+      "Collect and keep only what you need (data minimisation).",
+      "Share with specific people using approved tools and least privilege.",
+      "Lock your screen when away.",
+      "Check recipients before sending.",
+      "Review app permissions and privacy settings regularly."
+    ],
+    "what_to_do": [
+      "If data was sent to the wrong person or exposed, report it immediately - many laws have short notification deadlines.",
+      "Do not try to hide or quietly fix the mistake."
+    ],
+    "extra_sections": []
+  },
+  {
+    "module_id": "mobile-security",
+    "title": "Mobile Security",
+    "category": "Mobile Security",
+    "summary": "Your phone holds your email, MFA and banking - protect it like a laptop.",
+    "what_is_it": "Mobile security covers phones and tablets: screen locks, updates, apps, permissions and messaging scams (smishing).",
+    "why_it_matters": "A compromised or lost phone can expose email, MFA codes, photos and payment apps.",
+    "warning_signs": [
+      "SMS about missed deliveries, tolls or bank problems with a link.",
+      "Apps asking for permissions unrelated to their purpose (a torch app wanting contacts).",
+      "Requests to install apps from outside the official store.",
+      "Unexpected battery drain or data use."
+    ],
+    "safe_practices": [
+      "Use a strong screen lock and biometrics.",
+      "Install apps only from official stores and review permissions.",
+      "Keep the OS and apps updated.",
+      "Enable remote locate/wipe.",
+      "Do not click links in unexpected SMS - open the official app instead."
+    ],
+    "what_to_do": [
+      "If your phone is lost, use remote lock/wipe and report it if it held work data.",
+      "If you clicked a suspicious link or installed a suspicious app, report it and follow IT guidance."
+    ],
+    "extra_sections": []
+  },
+  {
+    "module_id": "remote-work",
+    "title": "Remote Work Security",
+    "category": "Remote Work",
+    "summary": "Bring the office's security habits home.",
+    "what_is_it": "Security practices for working from home, cafes or while travelling.",
+    "why_it_matters": "Home networks, shared devices and public spaces create new risks for work data.",
+    "warning_signs": [
+      "Family members using your work device.",
+      "Confidential calls in public spaces.",
+      "Work files saved to personal cloud storage."
+    ],
+    "safe_practices": [
+      "Use the company VPN and approved collaboration tools.",
+      "Lock your screen and keep work devices for work only.",
+      "Use a privacy screen in public.",
+      "Keep your home router updated and secured."
+    ],
+    "what_to_do": [
+      "Report lost/stolen devices immediately.",
+      "Report suspected compromise even outside office hours using the official channel."
+    ],
+    "extra_sections": []
+  },
+  {
+    "module_id": "cloud-account-security",
+    "title": "Cloud Account Security",
+    "category": "Cloud",
+    "summary": "Cloud accounts are only as safe as their sign-in and sharing settings.",
+    "what_is_it": "Protecting accounts on cloud services (email, file sharing, SaaS apps, developer consoles).",
+    "why_it_matters": "A single compromised cloud account can expose shared files, mailboxes and connected apps.",
+    "warning_signs": [
+      "OAuth consent prompts asking a new app for broad access to your mailbox or files.",
+      "Sign-in alerts from unknown locations.",
+      "Files shared publicly by default.",
+      "Access keys or tokens committed to code repositories."
+    ],
+    "safe_practices": [
+      "Use MFA/passkeys on all cloud accounts.",
+      "Review connected apps and remove unused ones.",
+      "Share with named people rather than public links.",
+      "Store secrets in a secrets manager or environment variables, never in code."
+    ],
+    "what_to_do": [
+      "Revoke suspicious app access and sessions.",
+      "Rotate any exposed keys immediately.",
+      "Report the event to the security team."
+    ],
+    "extra_sections": []
+  },
+  {
+    "module_id": "incident-reporting",
+    "title": "Incident Reporting",
+    "category": "Incident Reporting",
+    "summary": "Report early, report everything suspicious - speed limits damage.",
+    "what_is_it": "Incident reporting means quickly telling the security team about anything suspicious: messages, lost devices, odd system behaviour or mistakes.",
+    "why_it_matters": "Early reports let responders contain problems before they spread. A report that turns out harmless is still useful.",
+    "warning_signs": [
+      "You clicked a link or opened a file and something felt wrong.",
+      "You notice unusual account activity.",
+      "A device is lost or stolen.",
+      "Data was sent to the wrong person."
+    ],
+    "safe_practices": [
+      "Know the official reporting channels (report button, helpdesk, security email/phone).",
+      "Include what happened, when, which device/account, and what you already did.",
+      "Do not investigate on your own or delete evidence.",
+      "Report even if you are unsure - nobody is punished for reporting in good faith."
+    ],
+    "what_to_do": [
+      "Report immediately through the official channel.",
+      "Preserve evidence: do not delete emails or files.",
+      "Follow responders' instructions."
+    ],
+    "extra_sections": []
+  },
+  {
+    "module_id": "ai-scams",
+    "title": "AI-Enabled Scam Awareness",
+    "category": "AI Scams",
+    "summary": "Voices, videos and messages can be convincingly faked - verify through a second channel.",
+    "what_is_it": "Scammers use AI to write flawless messages, clone voices from short recordings and create deepfake videos to impersonate trusted people.",
+    "why_it_matters": "Traditional red flags like bad grammar are disappearing; a familiar voice or face is no longer proof of identity.",
+    "warning_signs": [
+      "A 'manager' or relative on a call or video urgently requesting money or secrets.",
+      "Slight audio/video glitches, unnatural pauses, or refusal to switch to a normal call.",
+      "Perfectly written but unusual requests that bypass normal process."
+    ],
+    "safe_practices": [
+      "Verify through a second, known channel before acting on any money or data request.",
+      "Agree a verification phrase with family or team for emergencies.",
+      "Follow payment approval processes even for senior requests.",
+      "Limit public voice/video samples where practical."
+    ],
+    "what_to_do": [
+      "Pause, end the call, and call back on a known number.",
+      "Report the attempt to the security team."
+    ],
+    "extra_sections": []
+  }
+]
